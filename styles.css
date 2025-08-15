@@ -1,0 +1,207 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("/assets/fonts/PICOBL__.TTF") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section1 {
+  width: 100%;
+  min-height: 100vh;
+  flex-shrink: 0;
+  margin: 0 auto;
+  border-radius: 50px;
+  background: #d2e6e4;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  max-width: 1200px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 62px;
+  height: 38px;
+}
+
+.logotext {
+  color: #0b7077;
+  font-family: MyFont;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.menu li {
+  list-style-type: none;
+}
+
+.menu li a {
+  color: #252641;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #FD661F;
+}
+
+.nav-btn {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-white, .btn-primary {
+  display: inline-flex;
+  padding: 15px 30px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-white {
+  color: #0b7077;
+  background: #fff;
+}
+
+.btn-primary {
+  color: #fff;
+  background: #0b7077;
+}
+
+.btn-white:hover, .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #0b7077;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .menu {
+    gap: 30px;
+  }
+  
+  .nav-btn {
+    gap: 15px;
+  }
+  
+  .btn-white, .btn-primary {
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: #d2e6e4;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 40px;
+    gap: 30px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .menu.active {
+    left: 0;
+  }
+  
+  .nav-btn {
+    display: none;
+  }
+  
+  .nav-btn.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 30px;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .hamburger.active i::before {
+    content: "\f00d";
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 50px;
+    height: 30px;
+  }
+  
+  .logotext {
+    font-size: 24px;
+  }
+  
+  .btn-white, .btn-primary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
